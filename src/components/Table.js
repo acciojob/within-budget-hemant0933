@@ -38,16 +38,24 @@ const Table = ({price}) => {
 
   return(
     <div>
-    <p><b>Items you can buy are in Green color</b></p>
-    <table>
-       {
+   <table>
+      <thead>
+        <tr>
+         <th>Items you can buy are in Green color</th>
+        </tr>
+      </thead>
+      <tbody>
+      {
         TableData.map((item, index) => (
+           
             <tr key={index}>
                 <td>{item.name}</td>
                 <td className={`${item.price > price ? 'redTextStyle' : 'greenTextStyle'}`}>{item.price}</td>
             </tr>
+          
         ))
        }
+        </tbody>
     </table>
   </div>
   ) 
